@@ -1,5 +1,9 @@
+import 'dart:ffi';
+
 import 'package:air4faii/utility/my_style.dart';
+import 'package:air4faii/widget/my_service.dart';
 import 'package:air4faii/widget/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,6 +16,24 @@ class _AuthenState extends State<Authen> {
 // Field
 
 // Method
+
+  @override
+  void initState() {
+    super.initState();
+    checkStatus();
+  }
+
+  Future<void> checkStatus() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    FirebaseUser firebaseUser = await firebaseAuth.currentUser();
+    if (firebaseUser != null) {
+      MaterialPageRoute route =
+          MaterialPageRoute(builder: (BuildContext buildContext) {
+        return MyService();
+      });
+      Navigator.of(context).pushAndRemoveUntil(route, (route) => false);
+    }
+  }
 
   Widget loginButton() {
     return Container(
