@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:air4faii/utility/my_style.dart';
+import 'package:air4faii/utility/normal_dialog.dart';
 import 'package:air4faii/widget/my_service.dart';
 import 'package:air4faii/widget/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,6 +15,8 @@ class Authen extends StatefulWidget {
 
 class _AuthenState extends State<Authen> {
 // Field
+
+  String user ='', password = '';
 
 // Method
 
@@ -45,9 +48,25 @@ class _AuthenState extends State<Authen> {
           'Log In',
           style: TextStyle(color: Colors.white),
         ),
-        onPressed: () {},
+        onPressed: () {
+          checkAuthen();
+        },
       ),
     );
+  }
+
+  Future<void> checkAuthen() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await auth
+        .signInWithEmailAndPassword(email: user, password: password)
+        .then((response) {
+          checkStatus();
+        })
+        .catchError((response) {
+      String title = response.code;
+      String message = response.message;
+      normalDialog(context, title, message);
+    });
   }
 
   Widget newRegisterButton() {
@@ -75,8 +94,10 @@ class _AuthenState extends State<Authen> {
     return Container(
       margin: EdgeInsets.only(top: 30.0),
       width: 250.0,
-      child: TextField(
-        obscureText: true,
+      child: TextField(keyboardType: TextInputType.emailAddress,
+        onChanged: (value) {
+          user = value.trim();
+        },
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           //enabledBorder: UnderlineInputBorder(
@@ -92,6 +113,10 @@ class _AuthenState extends State<Authen> {
     return Container(
       width: 250.0,
       child: TextField(
+        obscureText: true,
+        onChanged: (value) {
+          password = value.trim();
+        },
         decoration: InputDecoration(
           enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: MyStyle().darkColor)),
