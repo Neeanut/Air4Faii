@@ -15,6 +15,7 @@ class _AuthenState extends State<Authen> {
 
   Widget loginButton() {
     return Container(
+      margin: EdgeInsets.only(top: 30.0),
       width: 250.0,
       child: RaisedButton(
         color: MyStyle().darkColor,
@@ -50,11 +51,14 @@ class _AuthenState extends State<Authen> {
 
   Widget userForm() {
     return Container(
+      margin: EdgeInsets.only(top: 30.0),
       width: 250.0,
       child: TextField(
+        obscureText: true,
         decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: MyStyle().darkColor)),
+          border: OutlineInputBorder(),
+          //enabledBorder: UnderlineInputBorder(
+          // borderSide: BorderSide(color: MyStyle().darkColor)),
           hintStyle: TextStyle(color: MyStyle().darkColor),
           hintText: 'Username :',
         ),

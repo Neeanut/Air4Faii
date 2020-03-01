@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "447645158766",
+    "firebase_url": "https://air4faii.firebaseio.com",
+    "project_id": "air4faii",
+    "storage_bucket": "air4faii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447645158766:android:8b80ff062dd1230f28857f",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.air4faii"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447645158766-as2pchld07binhmjddufjc65he3tlcac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt0MXhEfHjLEhXp_J1UwebPMwrmu0hUqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447645158766-as2pchld07binhmjddufjc65he3tlcac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
