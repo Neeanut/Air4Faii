@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>447645158766-413rsopf83na6t3nej5tvv8r9qaru192.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.447645158766-413rsopf83na6t3nej5tvv8r9qaru192</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNxNzJ9Il4_5aaQ9yfP5ZDxbnocUGhv7k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>447645158766</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flutterthailand.air4faii</string>
+	<key>PROJECT_ID</key>
+	<string>air4faii</string>
+	<key>STORAGE_BUCKET</key>
+	<string>air4faii.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:447645158766:ios:1c3b7ab89747f9df28857f</string>
+	<key>DATABASE_URL</key>
+	<string>https://air4faii.firebaseio.com</string>
+</dict>
+</plist>
