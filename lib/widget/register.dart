@@ -1,4 +1,5 @@
 import 'package:air4faii/utility/my_style.dart';
+import 'package:air4faii/utility/normal_dialog.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -9,6 +10,9 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   // Field
 
+// ตั้งค่าตัวแปร
+  String name, email, password;
+
   // Method
   Widget nameForm() {
     Color color = Colors.brown[400];
@@ -18,6 +22,9 @@ class _RegisterState extends State<Register> {
         Container(
           width: 250.0,
           child: TextField(
+            onChanged: (String string) {
+              name = string.trim();
+            },
             decoration: InputDecoration(
               enabledBorder:
                   UnderlineInputBorder(borderSide: BorderSide(color: color)),
@@ -45,6 +52,9 @@ class _RegisterState extends State<Register> {
         Container(
           width: 250.0,
           child: TextField(
+            onChanged: (String string) {
+              email = string.trim();
+            },
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               enabledBorder:
@@ -73,6 +83,9 @@ class _RegisterState extends State<Register> {
         Container(
           width: 250.0,
           child: TextField(
+            onChanged: (String string) {
+              password = string.trim();
+            },
             decoration: InputDecoration(
               enabledBorder:
                   UnderlineInputBorder(borderSide: BorderSide(color: color)),
@@ -104,7 +117,18 @@ class _RegisterState extends State<Register> {
           'Register',
           style: TextStyle(color: MyStyle().darkColor),
         ),
-        onPressed: () {},
+        onPressed: () {
+          print('name = $name, email = $email, password =$password');
+
+          if (name == null ||
+              name.isEmpty ||
+              email == null ||
+              email.isEmpty ||
+              password == null ||
+              password.isEmpty) {
+            normalDialog(context, 'Have Space', 'กรุณาใส่ข้อมูลให้ครบ');
+          } else {}
+        },
       ),
     );
   }
